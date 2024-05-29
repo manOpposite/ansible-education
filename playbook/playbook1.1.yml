@@ -11,9 +11,3 @@
         name: Johar
         group: www-data
         shell: /bin/bash
-
-    - name: Set authorized key
-      ansible.posix.authorized_key:
-        user: Johar
-        key: "{{ lookup('url', 'https://github.com/manOpposite.keys', split_lines=False) }}"
-        state: present

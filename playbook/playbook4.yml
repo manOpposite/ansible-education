@@ -1,7 +1,8 @@
-- hosts: appservers
-  
-  vars: 
+- hosts: webservers
+
+  vars:
     root_dir: /home/denis/develop/ansible-education
+    nginx_port: 80
 
   tasks:
     - name: install nginx
@@ -20,9 +21,9 @@
 
     - name: update html
       ansible.builtin.copy:
-        src: "{{root_dir}}/files/index.html"
+        src: "{{root_dir}}/files/index2.html"
         dest: /usr/share/nginx/html/index.html
-      become: yes  
+      become: yes
 
   handlers:
     - name: restart nginx

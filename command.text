@@ -1,0 +1,1 @@
+ansible-playbook playbook/playbook3.yml -i inventory/inventory.ini
